@@ -5,6 +5,9 @@ namespace DependencyInversion.Controllers;
 [ApiController, Route("student")]
 public class StudentController : ControllerBase
 {
+    //Contiene una referencia directa con otra clase, lo cual crea una dependencia
+    //La mejor forma de corregir esto es creando una interfaz la cual solamente le permita acceder a la información necesaria
+    //sin tener que hacer referencia a la clase, solamente referencia a la interfaz y a la informacion que esta le permite ver
     StudentRepository studentRepository = new StudentRepository();
     Logbook logbook = new Logbook();
 
