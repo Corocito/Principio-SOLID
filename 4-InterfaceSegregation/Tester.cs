@@ -1,34 +1,17 @@
 namespace InterfaceSegregation
 {
-    public class Tester : IActivities
+    public class Tester : ITest, IDesign
     {
         public Tester()
         {
         }
 
-        public void Plan() 
-        {
-            throw new ArgumentException();
+        public void Test(){
+            Console.WriteLine("Im testing the application");
         }
-
-        public void Comunicate() 
-        {
-            throw new ArgumentException();
-        }
-
-        public void Design() 
-        {
-            throw new ArgumentException();
-        }
-
-        public void Develop() 
-        {
-            Console.WriteLine("I'm developing the functionalities required");
-        }
-
-        public void Test() 
-        {
-            throw new ArgumentException();
+        
+        public void Design(){
+            Console.WriteLine("Im designing new futures");
         }
     }
 }
