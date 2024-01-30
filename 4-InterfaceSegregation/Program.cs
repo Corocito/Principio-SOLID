@@ -1,3 +1,16 @@
 ﻿using InterfaceSegregation;
-
+Console.WriteLine("----------------------------------------------------------------------------------------");
+Console.WriteLine("Funciones del Developer");
 new Developer().Develop();
+Console.WriteLine("----------------------------------------------------------------------------------------");
+Console.WriteLine("Funciones del Scrum Master");
+ScrumMaster scrum = new ScrumMaster();
+scrum.Test();
+scrum.Develop();
+scrum.Design();
+scrum.Comunicate();
+scrum.Plan();
+Console.WriteLine("----------------------------------------------------------------------------------------");
+Console.WriteLine("Funciones del Tester");
+new Tester().Test();
+Console.WriteLine("----------------------------------------------------------------------------------------");
