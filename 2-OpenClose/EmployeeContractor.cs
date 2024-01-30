@@ -7,6 +7,7 @@ namespace OpenClose
 {
     public class EmployeeContractor : Employee
     {
+        //Creacion del constructor para manejar los parametros recibidos de la clase padre
         public EmployeeContractor(string fullname, int hoursWorked){
             Fullname = fullname;
             HoursWorked = hoursWorked;
@@ -15,7 +16,10 @@ namespace OpenClose
         //Se crea la implementacion del metodo abstracto
         public override decimal CalculateSalaryMonthly()
         {
-            throw new NotImplementedException();
+
+            decimal valorHora = 20000M;
+            decimal salario = valorHora * HoursWorked;
+            return salario;
         }
     }
 }
