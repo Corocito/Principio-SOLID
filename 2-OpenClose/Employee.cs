@@ -10,6 +10,8 @@ namespace OpenClose
         public string Fullname {get;set;}
         public int HoursWorked{get;set;}
 
+
+        //Se crea un metodo para las demas clases que se encargará de realizar el calculo salarial
         public abstract decimal CalculateSalaryMonthly();
     }
 }
