@@ -1,34 +1,21 @@
 ﻿using OpenClose;
 
-CalculateSalaryMonthly(new List<object>() {
+//Se cambia la variable de la lista de objetc a Employee, ya que es esta la 
+CalculateSalaryMonthly(new List<Employee>() {
     new EmployeeFullTime("Pepito Pérez", 160),
-    new EmployeePartTime("Manuel Lopera", 180)
+    new EmployeePartTime("Manuel Lopera", 180),
+    new EmployeeContractor("Juanito", 200)
 });
 
-
-void CalculateSalaryMonthly(List<object> employees) 
+//Se crea el void que no devolvera nada y se encargara de mostrar la información
+//Este recibe una lista la cual es Employee ya que es la que hereda a los demas Employees, se crea con el nombre employees
+void CalculateSalaryMonthly(List<Employee> employees) 
 {
+    //Se crea un ciclo foreach para recorrer todos los elementos de la lista de empleados, se crea con la variable employee
     foreach (var employee in employees)
     {
-        if (employee is EmployeeFullTime) 
-        {
-            decimal hourValue = 30000M;
-            EmployeeFullTime employeeFullTime = ((EmployeeFullTime)employee);
-            decimal salary = hourValue * employeeFullTime.HoursWorked;
-            Console.WriteLine($"Empleado: {employeeFullTime.Fullname}, Pago: {salary:C1} ");
-        }
-        else 
-        {
-            decimal hourValue = 20000M;
-            EmployeePartTime employeePartTime = ((EmployeePartTime)employee);
-            decimal salary = hourValue * employeePartTime.HoursWorked;
-            if (employeePartTime.HoursWorked > 160) {
-                decimal effortCompensation = 5000M;
-                int extraDays = employeePartTime.HoursWorked - 160;
-                salary += effortCompensation * extraDays;
-            }
-            Console.WriteLine($"Empleado: {employeePartTime.Fullname}, Pago: {salary:C1} ");
-        }
+        //Se elimina la mayoria de la logica para cumplir con el Single Responsability
+        //Solo se necesita el WriteLine para mostrar la informacion, y se concatena el CalculateSalaryMonthly para realizar el calculo de cada empleado
+        Console.WriteLine($"Empleado: {employee.Fullname}, Pago: {employee.CalculateSalaryMonthly():C1} ");
     }
-
 }
