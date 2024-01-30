@@ -1,6 +1,6 @@
 namespace InterfaceSegregation
 {
-    public class ScrumMaster : IActivities
+    public class ScrumMaster : IComunicate, IDesign, ITest, IPlan, IDevelop
     {
         public ScrumMaster()
         {
